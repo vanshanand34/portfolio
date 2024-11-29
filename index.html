@@ -82,13 +82,28 @@
             margin: 1em 3vw;
             background-color: rgb(113, 167, 149);
             border-radius: 2em;
-            padding:2em 0;
+            padding: 2em 0;
         }
 
         .upper-part {
             display: flex;
             justify-content: space-between;
             padding: 2em 2em 1em;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .upper-part {
+                flex-direction: column-reverse;
+            }
+            .responsive-nav-icon{
+                display: block;
+            }
+            .icons{
+                display: none;
+            }
+            .main-heading{
+                font-size:1rem;
+            }
         }
 
         .custom-input {
@@ -98,18 +113,18 @@
         }
 
         .main-heading {
-            font-size: 4rem;
+            font-size: 3rem;
             font-weight: bolder;
             color: white;
         }
 
         .custom-image {
-            height:7rem;
+            height: 7rem;
             width: 7rem;
             align-self: center;
-            border:1px solid #000000;
+            border: 1px solid #000000;
             border-radius: 3em;
-            padding:1em;
+            padding: 1em;
         }
 
         .custom-position {
@@ -121,7 +136,8 @@
             grid-template-columns: auto auto auto auto;
             padding: 0 2em;
         }
-        .custom-position{
+
+        .custom-position {
             grid-column: 1;
             border: 1px solid white;
             font-weight: bold;
@@ -130,6 +146,12 @@
             padding: 0.5em 1.5rem;
             display: flex;
             justify-content: space-between;
+        }
+        .responsive-nav-icon{
+            color:white;
+            background-color: #000000;
+            display:none;
+            grid-column: 4;
         }
     </style>
 </head>
@@ -142,6 +164,9 @@
                 <i class="bi bi-search"></i>
             </span>
         </div>
+        <div class="responsive-nav-icon">
+            <i class="fas fa-bars"></i>
+        </div>
         <div class="icons">
             <i class="bi bi-github custom-icon"></i>
             <i class="bi bi-linkedin custom-icon"></i>
@@ -152,9 +177,9 @@
         <div class="upper-card">
             <div class="upper-part">
                 <div class="main-heading">
-                    Vansh Anand ----
+                    Vansh Anand --
                 </div>
-                <img src="../../../hoodie.png" alt="" class="custom-image">
+                <img src="../../hoodie.png" alt="" class="custom-image">
             </div>
             <div class="position-grid">
                 <div class="custom-position">Software Learner<i class="bi bi-laptop"></i></div>
