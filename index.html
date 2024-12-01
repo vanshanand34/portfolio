@@ -11,149 +11,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <!-- <link rel="stylesheet" href="style.css"> -->
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            background-color: black;
-        }
-
-        .navbar {
-            display: grid;
-            column-gap: 20px;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
-            margin: 2vh 2vw;
-        }
-
-        .searchbar {
-            grid-column: 1;
-            background-color: white;
-            border-radius: 1.5em;
-            padding: 5px 10px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .icon-search {
-            background-color: black;
-            color: white;
-            border-radius: 1.5em;
-            padding: 0.4em 0.75em;
-            cursor: pointer;
-        }
-
-        .icon-search:hover {
-            color: black;
-            background-color: white;
-            outline: 1px solid black;
-        }
-
-        .icons {
-            grid-column: 3;
-            display: flex;
-            justify-content: end;
-            padding: 0 1em;
-        }
-
-        .custom-icon {
-            color: rgb(255, 255, 255);
-            background-color: #000000;
-            padding: 1em;
-            border: 1px solid white;
-            border-radius: 100%;
-            padding: 0.5em 0.9em;
-            margin: 0 1em;
-            cursor: pointer;
-        }
-
-        .custom-icon:hover {
-            background-color: white;
-            color: black;
-        }
-
-        .upper-card {
-            /* height: 30vh; */
-            width: 94vw;
-            margin: 1em 3vw;
-            background-color: rgb(113, 167, 149);
-            border-radius: 2em;
-            padding: 2em 0;
-        }
-
-        .upper-part {
-            display: flex;
-            justify-content: space-between;
-            padding: 2em 2em 1em;
-        }
-
-        @media only screen and (max-width: 600px) {
-            .upper-part {
-                flex-direction: column-reverse;
-            }
-            .responsive-nav-icon{
-                display: block;
-            }
-            .icons{
-                display: none;
-            }
-            .main-heading{
-                font-size:1rem;
-            }
-        }
-
-        .custom-input {
-            width: 100%;
-            border: none;
-            outline: none;
-        }
-
-        .main-heading {
-            font-size: 3rem;
-            font-weight: bolder;
-            color: white;
-        }
-
-        .custom-image {
-            height: 7rem;
-            width: 7rem;
-            align-self: center;
-            border: 1px solid #000000;
-            border-radius: 3em;
-            padding: 1em;
-        }
-
-        .custom-position {
-            color: white;
-        }
-
-        .position-grid {
-            display: grid;
-            grid-template-columns: auto auto auto auto;
-            padding: 0 2em;
-        }
-
-        .custom-position {
-            grid-column: 1;
-            border: 1px solid white;
-            font-weight: bold;
-            font-size: large;
-            border-radius: 1em;
-            padding: 0.5em 1.5rem;
-            display: flex;
-            justify-content: space-between;
-        }
-        .responsive-nav-icon{
-            color:white;
-            background-color: #000000;
-            display:none;
-            grid-column: 4;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -165,33 +23,90 @@
             </span>
         </div>
         <div class="responsive-nav-icon">
-            <i class="fas fa-bars"></i>
+            <i class="fas fa-bars" aria-hidden="false"></i>
         </div>
         <div class="icons">
+            <div>Home</div>
+            <div>Contact me</div>
+            <div>Projects</div>
             <i class="bi bi-github custom-icon"></i>
             <i class="bi bi-linkedin custom-icon"></i>
             <i class="bi bi-twitter-x custom-icon"></i>
+        </div>
+        <div class="icons-min">
+            <div>Home</div>
+            <div>Contact me</div>
+            <div>Projects</div>
+            <div class="close-icon">X</div>
+            <i class="bi bi-github"></i>
+            <i class="bi bi-linkedin"></i>
+            <i class="bi bi-twitter-x "></i>
         </div>
     </div>
     <div class="custom-container">
         <div class="upper-card">
             <div class="upper-part">
                 <div class="main-heading">
-                    Vansh Anand --
+                    Vansh Anand
                 </div>
                 <img src="../../hoodie.png" alt="" class="custom-image">
             </div>
             <div class="position-grid">
-                <div class="custom-position">Software Learner<i class="bi bi-laptop"></i></div>
+                <div class="custom-position">
+                    <div class="text">
+                        Software Learner
+                    </div>
+                    <i class="bi bi-laptop"></i>
+                </div>
             </div>
 
         </div>
     </div>
 </body>
-<script src="script.js"></script>
+<!-- <script src="script.js"></script> -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
 <script src="https://kit.fontawesome.com/fa6e008efc.js" crossorigin="anonymous"></script>
+<script>
+    const responsiveNavIcon = document.querySelector('.responsive-nav-icon');
+    const IconsMin = document.querySelector('.icons-min');
+    const closeIcon = document.querySelector('.close-icon');
+    console.log(responsiveNavIcon, IconsMin);
+    responsiveNavIcon.addEventListener('click', (e) => {
+        console.log('clicked');
+        showHideNavBar();
+        // responsiveNavIcon.classList.toggle("active");
+    });
+
+    closeIcon.addEventListener('click', () => {
+        console.log("clicked close");
+        IconsMin.style.display = "none";
+        responsiveNavIcon.style.display = "block";
+    });
+
+    const showHideNavBar = () => {
+        console.log(window.getComputedStyle(IconsMin).display);
+        if ((window.getComputedStyle(IconsMin).display) == "none") {
+            IconsMin.style.display = "flex";
+            IconsMin.style.flexDirection = "column";
+            IconsMin.style.justifyContent = "space-between";
+            IconsMin.style.position = "absolute";
+            IconsMin.style.backgroundColor = "rgb(41, 41, 41)";
+            IconsMin.style.color = "white";
+            IconsMin.style.borderRadius = "1em";
+            IconsMin.style.top = "1em";
+            IconsMin.style.right = "0";
+            IconsMin.style.padding = "5em 2em";
+        } else {
+            IconsMin.style.display = "none";
+        }
+        if (responsiveNavIcon.style.display == "none") {
+            responsiveNavIcon.style.display = "block";
+        } else {
+            responsiveNavIcon.style.display = "none";
+        }
+    };
+</script>
 
 </html>
