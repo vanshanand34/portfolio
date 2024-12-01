@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="nav-item searchbar">
+            <input type="text" class="custom-input" placeholder="Search...">
+            <span class="icon-search">
+                <i class="bi bi-search"></i>
+            </span>
+        </div>
+        <div class="responsive-nav-icon">
+            <i class="fas fa-bars" aria-hidden="false"></i>
+        </div>
+        <div class="icons">
+            <div>Home</div>
+            <div>Contact me</div>
+            <div>Projects</div>
+            <i class="bi bi-github custom-icon"></i>
+            <i class="bi bi-linkedin custom-icon"></i>
+            <i class="bi bi-twitter-x custom-icon"></i>
+        </div>
+        <div class="icons-min">
+            <div>Home</div>
+            <div>Contact me</div>
+            <div>Projects</div>
+            <div class="close-icon">X</div>
+            <i class="bi bi-github"></i>
+            <i class="bi bi-linkedin"></i>
+            <i class="bi bi-twitter-x "></i>
+        </div>
+    </div>
+    <div class="custom-container">
+        <div class="upper-card">
+            <div class="upper-part">
+                <div class="main-heading">
+                    Vansh Anand
+                </div>
+                <img src="../../hoodie.png" alt="" class="custom-image">
+            </div>
+            <div class="position-grid">
+                <div class="custom-position">
+                    <div class="text">
+                        Software Learner
+                    </div>
+                    <i class="bi bi-laptop"></i>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+<!-- <script src="script.js"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/fa6e008efc.js" crossorigin="anonymous"></script>
+<script>
+    const responsiveNavIcon = document.querySelector('.responsive-nav-icon');
+    const IconsMin = document.querySelector('.icons-min');
+    const closeIcon = document.querySelector('.close-icon');
+    console.log(responsiveNavIcon, IconsMin);
+    responsiveNavIcon.addEventListener('click', (e) => {
+        console.log('clicked');
+        showHideNavBar();
+        // responsiveNavIcon.classList.toggle("active");
+    });
+
+    closeIcon.addEventListener('click', () => {
+        console.log("clicked close");
+        IconsMin.style.display = "none";
+        responsiveNavIcon.style.display = "block";
+    });
+
+    const showHideNavBar = () => {
+        console.log(window.getComputedStyle(IconsMin).display);
+        if ((window.getComputedStyle(IconsMin).display) == "none") {
+            IconsMin.style.display = "flex";
+            IconsMin.style.flexDirection = "column";
+            IconsMin.style.justifyContent = "space-between";
+            IconsMin.style.position = "absolute";
+            IconsMin.style.backgroundColor = "rgb(41, 41, 41)";
+            IconsMin.style.color = "white";
+            IconsMin.style.borderRadius = "1em";
+            IconsMin.style.top = "1em";
+            IconsMin.style.right = "0";
+            IconsMin.style.padding = "5em 2em";
+        } else {
+            IconsMin.style.display = "none";
+        }
+        if (responsiveNavIcon.style.display == "none") {
+            responsiveNavIcon.style.display = "block";
+        } else {
+            responsiveNavIcon.style.display = "none";
+        }
+    };
+</script>
+
+</html>
